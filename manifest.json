@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Overlay Timer",
+  "description": "A minimal, persistent countdown timer that floats on top of any page.",
+  "version": "1.0",
+  "action": {
+    "default_title": "Toggle Overlay Timer",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["timer.html"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

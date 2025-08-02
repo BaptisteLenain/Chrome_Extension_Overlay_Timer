@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Overlay Timer</title>
+    <link rel="stylesheet" href="timer.css" />
+  </head>
+  <body>
+    <div class="panel" id="panel">
+      <!-- drag handle -->
+      <div class="dragBar" id="dragBar"></div>
+
+      <!-- minimize button -->
+      <button class="minimize" id="minimizeBtn" title="Minimize">−</button>
+      
+      <!-- close button -->
+      <button class="close" id="closeBtn" title="Close">✖</button>
+
+      <!-- compact mode -->
+      <div class="compact-mode" id="compactMode" style="display: none;">
+        <input
+          type="text"
+          id="compactTimeDisplay"
+          class="compact-time-display"
+          readonly
+        />
+        <div class="compact-controls">
+          <button id="compactStartPause" class="compact-btn">▶</button>
+          <button id="compactReset" class="compact-btn">⟲</button>
+          <button id="expandBtn" class="compact-btn">−</button>
+        </div>
+      </div>
+
+      <!-- normal mode -->
+      <div class="normal-mode" id="normalMode">
+
+        <!-- circular timer -->
+        <div class="circle-wrapper">
+          <svg class="progress-ring" width="150" height="150">
+            <circle class="progress-ring__bg" r="70" cx="75" cy="75"></circle>
+            <circle class="progress-ring__fill" r="70" cx="75" cy="75"></circle>
+          </svg>
+
+          <!-- single-click editable time -->
+          <input
+            type="text"
+            id="timeDisplay"
+            class="time-display"
+            value="00:05:00"
+            readonly
+          />
+        </div>
+
+        <!-- quick-add buttons -->
+        <div class="quick-add">
+          <button data-add="30">+0:30</button>
+          <button data-add="60">+1:00</button>
+          <button data-add="300">+5:00</button>
+        </div>
+
+        <!-- Start / Pause / Reset -->
+        <div class="controls">
+          <button id="startPause">▶</button>
+          <button id="reset">⟲</button>
+        </div>
+      </div>
+
+    <script src="timer.js"></script>
+  </body>
+</html>
